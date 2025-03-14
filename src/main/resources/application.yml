@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: tyto-init
+  # database config
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/tytoInitTest_DB?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER  # 适用场景：旧项目兼容、复杂路径匹配
+  jackson:
+    # jackson关于Date类型数据的返回format
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+server:
+  port: 7511
+  servlet:
+    context-path: /api
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-field: isDelete # 逻辑删除字段
+      logic-delete-value: 1 # 逻辑已删除
+      logic-not-delete-value: 0 # 逻辑未删除
+logging:
+  level:
+    com.baomidou.mybatisplus: DEBUG
