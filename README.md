@@ -121,3 +121,5 @@ service.post('/api/user/login', this.loginForm)
 | 50000  | 系统内部异常   |
 | 50001  | 操作失败       |
 
+注：参考来源于yupi大佬的教学
+
